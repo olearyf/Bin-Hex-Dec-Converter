@@ -32,16 +32,28 @@ public class Converter {
             //read more about it
 
         }
+        //add in space between quads?
         for(int i = binTemp.length()-1; i>=0; i--){
             binFinal += binTemp.charAt(i);
         }
         return binFinal;
     }
 
-    /**public int binToDec(String binary){
+    public int binToDec(String binary){
+        dec = 0;
+        binTemp = "";
+        for(int i = binary.length()-1;i>=0; i--){
+            binTemp += binary.charAt(i);
+        }
+        for(int k = 0; k<binTemp.length();k++){
+            if(binTemp.charAt(k) == '1'){
+                dec += Math.pow(2, k);
+            }
+        }
+        return dec;
     }
 
-    public int hexToDec(String hexadecimal){
+    /**public int hexToDec(String hexadecimal){
     }
 
     public String decToHex(int decimal){
